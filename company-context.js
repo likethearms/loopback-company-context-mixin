@@ -6,6 +6,7 @@ module.exports = (Model, options) => {
       'patchOrCreate',
     ];
 
+    if (options.debug) console.log(ctx.method.name);
     if (writeMethodNames.includes(ctx.method.name)) return next();
     if (options
       && 'ignore' in options
