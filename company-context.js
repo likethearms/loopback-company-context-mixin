@@ -5,7 +5,6 @@ module.exports = (Model, options) => {
       'replaceOrCreate',
       'patchOrCreate',
     ];
-    console.log('CompanyContext');
 
     if (writeMethodNames.includes(ctx.method.name)) return next();
     if (options
