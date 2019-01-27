@@ -3,7 +3,20 @@ Company context
 
 This module is for the loopback framework. It add user's companyId to every read request's query.
 
-NOTE! Adding companyId to request require active accessToken. It won't work with unauthorized routes.
+NOTE! Adding companyId to request require active accessToken. It won't work with unauthorized routes. And you need to add options to request
+
+```json
+{
+  "accepts": [
+    {
+      "arg": "options",
+      "type": "object",
+      "http": "optionsFromRequest"
+    }
+  ]
+}
+```
+
 
 INSTALL
 =============
