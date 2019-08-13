@@ -22,6 +22,11 @@ module.exports = (Model, options) => {
     return Model.app.models.Member.findById(userId, (err, user) => {
       ctx.args.filter.where.companyId = user.companyId;
       ctx.args.where.companyId = user.companyId;
+
+      if (options.debug) {
+        console.log('CTX.ARGS@AFTER:', ctx.args);
+        console.log('CTX.ARGS.OPTIONS@AFTER:', ctx.args.options);
+      }
       next();
     });
   });
